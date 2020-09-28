@@ -1,6 +1,7 @@
 //get variables
 const btn = document.getElementById("btn");
 const zipCode = document.getElementById("ZipCode");
+const errorMessage = document.getElementById("errorMessage");
 const cityName = document.getElementById("cityName");
 const temperatureK = document.getElementById("temperatureK");
 const temperatureF = document.getElementById("temperatureF");
@@ -22,6 +23,7 @@ btn.addEventListener("click", function () {
         .then(response => response.json())
         .then((data) => {
             console.log(data.weather[0].icon);
+            errorMessage.style.display = "none";
             cityName.innerHTML = data.name;
             let temperature = data.main.temp;
             temperatureK.innerHTML = `${Math.floor(temperature)} K`;
@@ -29,5 +31,8 @@ btn.addEventListener("click", function () {
             temperatureC.innerHTML = `${Math.floor(temperature - 273.15)} C`;
             condition.innerHTML = data.weather[0].main;
             other.src = `${iconString}${data.weather[0].icon}@4x.png`;
+        }).catch(error => {
+            errorMessage.style.display = "block";
+            errorMessage.children[0].innerHTML = "Error, please check your input and try again.";
         });
 });
