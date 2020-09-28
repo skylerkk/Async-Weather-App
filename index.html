@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- Header has Weather App title and form for zipcode with a button-->
     <div class="container">
         <div class="row text-center col-12">
             <h1 class = "col-lg-12 py-4">Weather App</h1>
@@ -23,43 +24,52 @@
             <div class="form-group mx-sm-3 mb-2">
                 <input type="input" class="form-control" id="ZipCode" placeholder="Zip Code">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">Get Weather</button>
+            <button id = "btn" type="submit" class="btn btn-primary mb-2">Get Weather</button>
         </div>
     </div>
+    
+    <!-- Div with 4 cards each slightly different from each other-->
+    <!--Card with header and a paragraph-->
     <div class="container text-center bottom-content">
         <div class= "row justify-content-center col-12 py-3">
             <div class="card" style="width: 18rem;">
                 <h5 class="card-header">City</h5>
                 <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p id = "cityName" class="card-text"></p>
                 </div>
               </div>
         </div>
+
+        <!--Card with header and 3 paragraphs and a border to splits them up-->
         <div class= "row justify-content-center col-12 py-3">
             <div class="card" style="width: 18rem;">
                 <h5 class="card-header">Temperature</h5>
                 <div class="card-body">
                   <div class ="row">
-                  <p class="card-text col-4 align-middle"> 123 K</p>
-                  <p class="card-text col-4 align-middle">32 F</p>
-                  <p class="card-text col-4 align-middle">-9 C</p>
+                  <p id = "temperatureK" class="card-text col-4 align-middle border-right"></p>
+                  <p id = "temperatureF" class="card-text col-4 align-middle border-right"></p>
+                  <p id = "temperatureC" class="card-text col-4 align-middle "></p>
                   </div>
                 </div>
               </div>
         </div>
+
+        <!--Card with header and paragraph-->
         <div class= "row justify-content-center col-12 py-3">
             <div class="card" style="width: 18rem;">
                 <h5 class="card-header">Condition</h5>
                 <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p id = "Condition"class="card-text"></p>
                 </div>
               </div>
         </div>
+
+        <!--Card with a header and an image below it-->
         <div class= "row justify-content-center col-12 py-3">
             <div class="card" style="width: 18rem;">
                 <h5 class="card-header">Season Display</h5>
                 <div class="card-body">
-                  <img src=> 
+                  <img id = "Other" class = "card-img" src = ""></img>
                 </div>
               </div>
         </div>
